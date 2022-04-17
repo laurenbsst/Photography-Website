@@ -15,6 +15,11 @@ body {
 
 }
 
+.subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+}
+
 nav {
     margin-right: 3rem;
 }
@@ -24,21 +29,19 @@ a {
     text-decoration: none;
     padding-right: 2rem;
     font-size: 1.5rem;
+    color: black;
 }
 
-* {box-sizing:border-box}
+a:visited {
+    text-decoration: none;
+    color: black;
+}
 
 .slideshowContainer {
     position: relative;
     width: 90%;
     height: 70vh;
     margin: auto;
-}
-
-.mySlides {
-    width: 100%;
-    height: 100%;
-    position: relative;
 }
 
 .slideshowContainer img {
@@ -48,56 +51,43 @@ a {
     position: absolute;
     object-fit: cover;
 }
-/* Hide the images by default */
-.mySlides {
-    display: none;
+
+.sectionSubtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-decoration: underline;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+.image-grid {
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height: 200px;
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
 }
 
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.image-grid>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.image-grid-col-2 {
+    grid-column: span 1;
 }
 
-.active,
-.dot:hover {
-    background-color: #717171;
+.image-grid-row-2 {
+    grid-row: span 2;
 }
 
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
+@media screen and (max-width: 1024px) {
+    .image-grid {
+        --num-cols: 2;
+        --row-height: 200px;
     }
 }
