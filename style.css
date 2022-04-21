@@ -52,10 +52,33 @@ a:visited {
     object-fit: cover;
 }
 
+#twenty-twenty-two {
+    height: 50vh;
+    width: 70rem;
+    margin: 3rem auto;
+}
+
+#twenty-twenty-one {
+    height: 50vh;
+    width: 70rem;
+    margin: 14rem auto;
+}
+
+#twenty-twenty {
+    height: 50vh;
+    width: 70rem;
+    margin: 28rem auto;
+}
+
+.image-grid-col-4 {
+    grid-column: span 4;
+}
+
 .sectionSubtitle {
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 400;
+    margin-left: 1rem;
     text-decoration: underline;
 }
 
